@@ -1,0 +1,47 @@
+# env and secrets
+.env
+.env.local
+*.key
+
+# python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+develop-eggs/
+.installed.cfg
+
+# virtual envs
+venv/
+.venv/
+env/
+ENV/
+
+# claude code
+.claude/
+
+# editors
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# coverage and testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.mypy_cache/
+.ruff_cache/
+
+# logs and local stuff
+*.log
+.local/
+scratch/
