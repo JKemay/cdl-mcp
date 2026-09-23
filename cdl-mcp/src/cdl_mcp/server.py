@@ -1,5 +1,7 @@
 import asyncio
+
 from mcp.server.fastmcp import FastMCP
+
 from .scraper import BPScraper
 
 _scraper: BPScraper | None = None

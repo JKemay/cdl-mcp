@@ -1,8 +1,9 @@
 import json
 import re
+
 import httpx
 from bs4 import BeautifulSoup
-from typing import Any
+
 from .cache import TTLCache
 
 BASE = "https://breakingpoint.gg"
@@ -128,7 +129,7 @@ class BPScraper:
         map_headers = []
         for h in soup.find_all(["h6", "h5"]):
             txt = h.get_text(" ", strip=True)
-            mm = re.match(r"Map\s+(\d+):\s*(.+?)\s+(Hardpoint|Search\s*&\s*Destroy|Control|Overload|SnD)\s*-\s*Breakdown", txt, re.I)
+            mm = re.match(r"Map\s+(\d+):\s*(.+?)\s+(Hardpoint|Search\s*&\s*Destroy|Control|Overload|SnD)\s*-\s*Breakdown", txt, re.IGNORECASE)
             if mm:
                 map_headers.append({"map_num": int(mm.group(1)), "map": mm.group(2).strip(), "mode": mm.group(3).strip()})
 
